@@ -1,6 +1,6 @@
-package game;
+package main.game;
 
-import game.util.NumberGenerator;
+import main.game.util.NumberGenerator;
 
 import java.util.Arrays;
 import java.util.Scanner;
