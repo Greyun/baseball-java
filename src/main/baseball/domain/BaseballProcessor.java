@@ -18,23 +18,31 @@ public class BaseballProcessor {
     }
 
     private Ball getBall(int[] a, int[] b) {
-        int ballCount = 0;
-        for (int i = 0; i < a.length; i++) {
-            for (int j = 0; j < b.length; j++) {
-                if (i == j) continue;
-                if (a[i] == b[j]) ballCount++;
-            }
-        }
+        int ballCount = getBallCount(a, b);
         if (ballCount > 0) return new Ball(ballCount);
         return null;
     }
 
+    private int getBallCount(int[] a, int[] b) {
+        int ballCount = 0;
+        for (int i = 0; i < a.length; i++)
+            for (int j = 0; j < b.length; j++) {
+                if (i == j) continue;
+                if (a[i] == b[j]) ballCount++;
+            }
+        return ballCount;
+    }
+
     private Strike getStrike(int[] a, int[] b) {
-        int strikeCount = 0;
-        for (int i = 0; i < a.length; i++) {
-            if (a[i] == b[i]) strikeCount++;
-        }
+        int strikeCount = getStrikeCount(a, b);
         if (strikeCount > 0) return new Strike(strikeCount);
         return null;
+    }
+
+    private int getStrikeCount(int[] a, int[] b) {
+        int strikeCount = 0;
+        for (int i = 0; i < a.length; i++)
+            if (a[i] == b[i]) strikeCount++;
+        return strikeCount;
     }
 }
