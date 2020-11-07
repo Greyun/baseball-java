@@ -12,9 +12,10 @@ public class Game {
         int[] computerNumbers = generateNumbers();
         System.out.println(Arrays.toString(computerNumbers));
 
-        System.out.println("연속된 3개의 숫자를 입력하세요. ex) 123");
         int[] userNumbers = receiveUserNumbers();
         System.out.println(Arrays.toString(userNumbers));
+
+
     }
 
     private int[] receiveUserNumbers() {
