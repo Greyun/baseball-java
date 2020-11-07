@@ -16,19 +16,24 @@ public class Game {
         int[] computerNumbers = generateNumbers();
         System.out.println(Arrays.toString(computerNumbers));
 
+        int[] userNumbers = receiveNumbersFromUser();
+        System.out.println(Arrays.toString(userNumbers));
+    }
+
+    private int[] receiveNumbersFromUser() {
         System.out.println("연속된 3개의 숫자를 입력하세요. ex) 123");
         Scanner scanner = new Scanner(System.in);
         String userInput = scanner.nextLine();
         String[] userInputArray = userInput.split("");
-        int[] userNumber = new int[LENGTH_OF_NUMBER];
+        int[] userNumbers = new int[LENGTH_OF_NUMBER];
         for (int i = 0; i < userInputArray.length; i++) {
             try {
-                userNumber[i] = Integer.parseInt(userInputArray[i]);
+                userNumbers[i] = Integer.parseInt(userInputArray[i]);
             } catch (NumberFormatException npe) {
                 npe.printStackTrace();
             }
         }
-        System.out.println(Arrays.toString(userNumber));
+        return userNumbers;
     }
 
     private int[] generateNumbers() {
