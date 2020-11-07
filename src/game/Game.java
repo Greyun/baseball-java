@@ -12,7 +12,6 @@ public class Game {
 
     int[] generateNumbers() {
         Random random = new Random();
-        int[] number = {random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1};
-        return number;
+        return new int[]{random.nextInt(9) + 1, random.nextInt(9) + 1, random.nextInt(9) + 1};
     }
 }
