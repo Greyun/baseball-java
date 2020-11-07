@@ -17,21 +17,10 @@ public class UserInputReceiver {
                 continue;
             }
 
-            if (hasNoSameNumberInArray(intArrayFromString)) break;
+            if (NumberValidator.hasNoSameNumberInArray(intArrayFromString)) break;
             System.out.println("연속된 숫자가 발견되었습니다. 숫자를 정확하게 입력해주세요.\n");
         }
         return intArrayFromString;
-    }
-
-    private boolean hasNoSameNumberInArray(int[] intArray) {
-        for (int i = 0; i < intArray.length; i++) {
-            int j = i + 1;
-            if (j ==  intArray.length) j = 0;
-            if (intArray[i] == intArray[j]) {
-                return false;
-            }
-        }
-        return true;
     }
 
     int[] getIntArrayFromString(String userInput) throws NumberFormatException {
