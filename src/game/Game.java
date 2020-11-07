@@ -10,7 +10,11 @@ public class Game {
     }
 
     public void start() {
+        int[] computerNumbers = generateNumbers();
+    }
+
+    private int[] generateNumbers() {
         NumberGenerator generator = new NumberGenerator();
-        int[] numbers = generator.generateNumbers(LENGTH_OF_NUMBER);
+        return generator.generateNumbers(LENGTH_OF_NUMBER);
     }
 }
