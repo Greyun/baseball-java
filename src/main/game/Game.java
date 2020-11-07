@@ -14,8 +14,6 @@ public class Game {
 
         int[] userNumbers = receiveUserNumbers();
         System.out.println(Arrays.toString(userNumbers));
-
-
     }
 
     private int[] receiveUserNumbers() {

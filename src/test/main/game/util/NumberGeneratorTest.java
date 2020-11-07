@@ -1,6 +1,5 @@
-package game;
+package main.game.util;
 
-import main.game.util.NumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
