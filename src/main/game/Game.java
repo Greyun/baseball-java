@@ -6,11 +6,7 @@ import main.game.util.UserInputReceiver;
 import java.util.Arrays;
 
 public class Game {
-
     private final int LENGTH_OF_NUMBER = 3;
-
-    public Game() {
-    }
 
     public void start() {
         int[] computerNumbers = generateNumbers();
