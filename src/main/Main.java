@@ -1,10 +1,10 @@
 package main;
 
-import main.game.Game;
+import main.baseball.BaseballManager;
 
 public class Main {
     public static void main(String[] args) {
-        Game game = new Game();
-        game.start();
+        BaseballManager baseballManager = new BaseballManager();
+        baseballManager.execute();
     }
 }

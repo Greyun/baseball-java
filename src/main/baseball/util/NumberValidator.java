@@ -1,4 +1,4 @@
-package main.game.util;
+package main.baseball.util;
 
 public class NumberValidator {
     static boolean hasNoSameNumberInArray(int[] intArray) {

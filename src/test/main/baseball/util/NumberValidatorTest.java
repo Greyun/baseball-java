@@ -1,4 +1,4 @@
-package main.game.util;
+package main.baseball.util;
 
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
