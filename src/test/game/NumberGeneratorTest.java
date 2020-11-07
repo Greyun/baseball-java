@@ -4,8 +4,7 @@ import main.game.util.NumberGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
+import static org.junit.jupiter.api.Assertions.*;
 
 class NumberGeneratorTest {
     private final int LENGTH_OF_NUMBER = 3;
@@ -16,6 +15,7 @@ class NumberGeneratorTest {
     void generateNumbersTest() {
         should_return_3length_intArray_in_generateNumbers();
         should_return_number_between_1_and_9_in_generateNumbers();
+        should_not_have_same_number_in_result_array();
     }
 
     @DisplayName("generateNumbers 로 생성된 번호는 3자리 여야 한다.")
@@ -28,5 +28,22 @@ class NumberGeneratorTest {
     void should_return_number_between_1_and_9_in_generateNumbers() {
         int number = numberGenerator.generateNumbers(LENGTH_OF_NUMBER)[0];
         assertTrue(number >= 1 && number <= 9);
+    }
+
+    @DisplayName("generateNumbers 로 생성된 번호는 동일한 숫자를 포함하지 않아야 한다.")
+    void should_not_have_same_number_in_result_array() {
+        for (int i = 0; i < 100; i++) {
+            int[] numbers = numberGenerator.generateNumbers(LENGTH_OF_NUMBER);
+            hasNoSameNumberInArray(numbers);
+        }
+    }
+
+    private void hasNoSameNumberInArray(int[] numbers) {
+        for (int i = 0; i < numbers.length; i++) {
+            for (int j = 0; j < numbers.length; j++) {
+                if (i == j) continue;
+                assertNotEquals(numbers[i], numbers[j]);
+            }
+        }
     }
 }
