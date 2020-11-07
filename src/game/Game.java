@@ -1,6 +1,6 @@
 package game;
 
-import java.util.Random;
+import game.util.NumberGenerator;
 
 public class Game {
 
@@ -10,19 +10,7 @@ public class Game {
     }
 
     public void start() {
-        int[] numbers = generateNumbers(LENGTH_OF_NUMBER);
-    }
-
-    int[] generateNumbers(int numberLength) {
-        int[] numbers = new int[numberLength];
-        for (int i = 0; i < numbers.length; i++) {
-            numbers[i] = getRandomNumber();
-        }
-        return numbers;
-    }
-
-    private int getRandomNumber() {
-        Random random = new Random();
-        return random.nextInt(9) + 1;
+        NumberGenerator generator = new NumberGenerator();
+        int[] numbers = generator.generateNumbers(LENGTH_OF_NUMBER);
     }
 }
