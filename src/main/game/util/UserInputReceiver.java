@@ -7,7 +7,7 @@ public class UserInputReceiver {
         return getIntArrayFromString(getUserInput());
     }
 
-    private int[] getIntArrayFromString(String userInput) {
+    int[] getIntArrayFromString(String userInput) {
         String[] userInputArray = userInput.split("");
         int[] userNumbers = new int[userInputArray.length];
         for (int i = 0; i < userInputArray.length; i++) {
