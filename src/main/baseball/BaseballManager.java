@@ -51,10 +51,11 @@ public class BaseballManager {
     }
 
     private void setUserNumbers() {
-        userNumbers = getNumbersFromSystemInput();
+        userNumbers = receiveUserNumbers();
     }
 
-    private int[] getNumbersFromSystemInput() {
+    private int[] receiveUserNumbers() {
+        SystemInputGetter inputGetter = new SystemInputGetter();
         return SystemInputGetter.getNumbersFromSystemInput(inputGetter);
     }
 
