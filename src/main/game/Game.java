@@ -1,9 +1,9 @@
 package main.game;
 
 import main.game.util.NumberGenerator;
+import main.game.util.UserInputReceiver;
 
 import java.util.Arrays;
-import java.util.Scanner;
 
 public class Game {
 
@@ -17,26 +17,13 @@ public class Game {
         System.out.println(Arrays.toString(computerNumbers));
 
         System.out.println("연속된 3개의 숫자를 입력하세요. ex) 123");
-        int[] userNumbers = receiveNumbersFromUser();
+        int[] userNumbers = receiveUserNumbers();
         System.out.println(Arrays.toString(userNumbers));
     }
 
-    private int[] receiveNumbersFromUser() {
-        return getIntArrayFromString(getUserInput());
-    }
-
-    private int[] getIntArrayFromString(String userInput) {
-        String[] userInputArray = userInput.split("");
-        int[] userNumbers = new int[LENGTH_OF_NUMBER];
-        for (int i = 0; i < userInputArray.length; i++) {
-            userNumbers[i] = Integer.parseInt(userInputArray[i]);
-        }
-        return userNumbers;
-    }
-
-    private String getUserInput() {
-        Scanner scanner = new Scanner(System.in);
-        return scanner.nextLine();
+    private int[] receiveUserNumbers() {
+        UserInputReceiver receiver = new UserInputReceiver();
+        return receiver.receiveNumbersFromUser();
     }
 
     private int[] generateNumbers() {
